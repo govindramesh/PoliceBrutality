@@ -124,17 +124,118 @@
                 <a href="https://govindramesh.github.io/PD-3DCNN/">3D CNN Tutorial</a>
             </div>
         </div>
-        <a href="https://govindramesh.github.io/PoliceBrutality/">Police Brutality</a>
+        <a href="https://govindramesh.github.io/PoliceViolence/">Police Violence</a>
     </div>
 
     <!-- Body section -->
     <div class = "body_sec">
+      <h1 style="line-height: 70%; font-size: 1.75em">Predicting Police Violence in US Counties Using Machine Learning Algorithms</h1>
+      <p style="font-size:19px"><i>Using machine learning skills to identify and bring awareness to systemic problems of society.
+      </i></p1>
       <section id="Contents">
            <p><br><span style="font-size:18px; font-weight:bold;">Sections:</span>
-           <br><a href="#sec1">What is a Convolutional Neural Network?</a>
-           <br><a style="" href="#sec2">Convolutional Neural Network Architecture</a>
+           <br><a href="#sec1">Rationale</a>
+           <br><a href="#sec2">Research Question</a>
+           <br><a href="#sec3">History of Police Violence</a>
+           <br><a href="#sec4">Machine Learning Algorithms</a>
+           <br><a href="#sec5">Methods</a>
+           <br><a href="#sec6">Data Analysis</a>
+           <br><a href="#sec7">Conclusions</a>
            <br></p>
       </section>
+      <hr>
+      <section style="padding-top:40px; margin-top:-50px;" id="sec1">
+          <h3>Rationale</h3>
+          <p>Over the past 20 years, there have been almost 27,500 reported deaths as a result of police brutality, an average of over three a day. With the shooting of Michael Brown in 2014 and the Black Lives Matter movement, the topic of police brutality came to the forefront of politics. However, despite attempts to reduce police violence, the number of deaths continues to increase every year. This project is trying to provide insights as to where and why police brutality occurs, and could help reduce the number of incidents each year.
+          </p>
+      </section>
+      <hr>
+      <section style="padding-top:40px; margin-top:-50px;" id="sec2">
+          <h3>Research Question</h3>
+          <p>The objective of this project is to use a machine learning algorithm to create a model predicting the number of deaths as a result of police violence in U.S. counties. As cities continue to develop and change, the results of this model can help determine the need for further supervision of police-civilian interactions and aid in decisions to allocate resources and training in order to prevent police brutality.
+          </p>
+      </section>
+      <hr>
+      <section style="padding-top:40px; margin-top:-50px;" id="sec3">
+          <h3>History of Police Violence</h3>
+          <p>Throughout American history, accounts of police violence show up repeatedly. Even with protests and movements fighting against the injustice seen with police violence, the incidents haven’t stopped. In fact, they continue to increase each year. In 2019 alone, there were over 1000 deaths as a result of police interaction, up from 995 known reportings in 2018. Many believe that police violence is a result of underlying racism, and while this project may support or refute this claim, it may not be accurate in terms of reality since it only draws conclusions from demographic, economic, and social data that is publicly available, not the motives of police officers. The model created will not show complications with specific individuals, instead identifying trends on larger scales to provide insight as to where police violence occurs.
+          </p>
+      </section>
+      <hr>
+      <section style="padding-top:40px; margin-top:-50px;" id="sec4">
+          <h3>Machine Learning Algorithms</h3>
+          <p>Machine learning is a type of artificial intelligence which creates a model that can automatically learn from provided data without being manually programmed. The process of machine learning begins with large amounts of data, which can then be analyzed to look for trends or patterns. Then, the algorithm can make generalizations and conclusions about input variables. There are two types of machine learning—supervised learning and unsupervised learning. For this project, supervised learning was the correct path, since there was already data on what I was trying to determine: the number of deaths as a result of police violence in each U.S. county.
+          </p>
+          <p><b>Supervised Learning:</b></p>
+          <ul>
+            <li>Uses data with known outputs to create an inferred function which generalizes the input variables.</li>
+            <li>Using data with known outputs that was not used to train the model (testing set), the model can be tested for accuracy by comparing its predicted output to the actual output.</li>
+            <li>After training, the model can predict the outputs with new data points for which the output is unknown.</li>
+          </ul>
+          <img style="height: 75%; width: 75%; display: block; margin-left: auto; margin-right: auto;" src="MLdiagram.jpg" alt="image error">
+          <p><b>Decision Tree:</b><br>Uses a series of decisions to narrow down the possible outputs until a final prediction is made. Each node on the tree represents a decision, where the value of one of the input variables for a data point determines the next node it reaches. The last node on each path, or branch, is called a leaf, and gives the prediction value for its branch.
+          </p>
+          <p><b>Random Decision Forest:</b><br>Merges several decision trees together, averaging their predictions (sometimes weighted based on the predicted error) to create a more accurate and stable final prediction. Random Decision Forests reduce the chances of overfitting, in which a decision tree becomes too specific and “fits” too closely to the training data, not allowing the model to create generalizations.
+          </p>
+          <p><b>Gradient Boosted Regression Tree:</b><br>Creates an ensemble of weak decision trees in which each successive model targets the weaknesses of the previous models.
+          </p>
+          <p><b>Linear Regression:</b><br>Creates a function to try and predict a value based on multiple input variables. During training, the algorithm learns the weights for each input variable, which will be the coefficients of the variable in the regression function.
+          </p>
+          <img style="height: 40%; width: 40%; display: block; margin-left: auto; margin-right: auto;" src="LinearRegression.jpg" alt="image error">
+          <p style="font-size:12px; text-align:center; margin-left: 90px; margin-right: 90px;">Example of a linear regression equation, with three input variables
+          </p>
+      </section>
+      <hr>
+      <section style="padding-top:40px; margin-top:-50px;" id="sec5">
+          <h3>Methods</h3>
+          <h4>Materials</h4>
+          <p>Data was collected from online databases such as The Washington Post for reports on police killings across the United States since 2013, the Census Bureau’s American FactFinder for demographic and economic information of counties, and the FBI’s UCR Program for annual crime levels. The raw data was prepared using Google Sheets and Jupyter Notebook, and then used to create and train the machine learning algorithms using BigML software.
+          </p>
+          <h4>Procedure</h4>
+          <ul>
+            <li>Data collection and preparation<br>
+              <ul>
+                <li>Download raw data from databases as CSV (comma-separated values) files</li>
+                <li>Import data into Google Sheets or Jupyter Notebook</li>
+                <li>Convert cities to counties as needed</li>
+                <li>Delete duplicates, erratic data, etc.</li>
+                <li>Finish with values in a specific field for each county</li>
+              </ul>
+            </li>
+            <li>Creating machine learning model<br>
+              <ul>
+                <li>Import data into BigML</li>
+                <li>Create a dataset</li>
+                <li>Split dataset into training(80%) and testing(20%)</li>
+                <li>Choose an algorithm and configure settings to create each model with the training dataset</li>
+                <li>Repeat with different algorithms (decision tree, gradient boosted regression trees, random decision forests, linear regression), different training settings, and different fields selected</li>
+              </ul>
+            </li>
+            <li>Testing and evaluating models<br>
+              <ul>
+                <li>Set up the “Evaluate” program in BigML to run the model against the testing dataset</li>
+                <li>Record the mean absolute error, mean squared error, and r<sup>2</sup> value</li>
+              </ul>
+            </li>
+          </ul>
+      </section>
+      <hr>
+      <section style="padding-top:40px; margin-top:-50px;" id="sec6">
+          <h3>Data Analysis</h3>
+          <p>The "Evaluate" program in BigML returns three measurements of a model's accuracy—r<sup>2</sup>, mean absolute error, and mean squared error—in comparison to the mean prediction and random prediction. These measurements will help determine the most effective model and how effective it is. I will also be using scatterplots with linear regression lines to compare each variable to the objective field(# of shootings) in order to observe the possible correlations. I am using the Pearson correlation coefficient to analyze the strength of relationships between each data field and the number of shootings per county, which will help me identify trends and draw conclusions in addition to the machine learning model.</p>
+          <img style="height: 60%; width: 60%; display: block; margin-left: auto; margin-right: auto;" src="Metrics.jpg" alt="image error">
+          <img style="height: 40%; width: 40%; display: inline-block; margin-left: 100px; margin-right: auto;" src="Asian.jpg" alt="image error">
+          <img style="height: 40%; width: 40%; display: inline-block; margin-left: auto; margin-right: auto;" src="Urban.jpg" alt="image error">
+          <img style="height: 40%; width: 40%; display: inline-block; margin-left: 100px; margin-right: auto;" src="HateCrimes.jpg" alt="image error">
+          <img style="height: 40%; width: 40%; display: inline-block; margin-left: auto; margin-right: auto;" src="Population.jpg" alt="image error">
+      </section>
+      <hr>
+      <section style="padding-top:40px; margin-top:-50px;" id="sec7">
+          <h3>Conclusions</h3>
+          <p>After testing various machine learning algorithms, I found the best to be a Random Decision Tree. My model had a mean absolute error of 1.41 and a mean squared error of 9.65, which represent how far off the model was from accurately predicting the number of police shootings in a given county. The r<sup>2</sup> value was 0.86, which means that the model explained about 86% of the variation in police shootings with multiple variables. The variable that influenced the model the most was the population of the county, with a correlation coefficient(r) of .94, followed by the number of hate crimes, the percent of the population being Asian, and the percent of the county being urban/rural, with r-values of .63, .34, and .32 respectively. However, outside of the model, when comparing variables to the number of shootings in proportion to the population, I found that economic conditions, such as poverty, unemployment rate, and per capita income had the largest r-values. From this I conclude that when trying to determine the number of shootings in a given county, factors such as population, hate crimes, and other demographics will give the most accurate prediction, but when trying to explain why some counties have unusually high rates of police violence in proportion to the population, economic conditions provide more insight.
+          </p>
+      </section>
+      <hr>
     </div>
 
     <!-- Footer Section -->
